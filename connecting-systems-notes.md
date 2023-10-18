@@ -25,7 +25,7 @@ Keep-Alive: 300
 Connection: keep-alive
 Cookie: PHPSESSID=r2t5uvjq435r4q7ib3vtdjq120
 ```
-The top line is the request line, the others are HTTP headers. The browser will then receive a response that looks like:
+The top line is the request line[^2], the others are HTTP headers. The browser will then receive a response that looks like:
 ```
 HTTP/1.x 200 OK
 Transfer-Encoding: chunked
@@ -38,11 +38,14 @@ X-Powered-By: W3 Total Cache/0.8
 <head>
 <!-- ... rest of the html ... -->
 ```
+The first line is the status line containing one of the codes Kevin mentioned in his talk. Then there will be a block of HTTP headers followed by a blank line which is followed by the HTMl. 
 
-The "Content-Type" header field now allowed documents other than HTML to be transferred.
+
+Remark: The "Content-Type" header field now allowed documents other than HTML to be transferred.
 
 
 
 
 
 [^1]: Recall that DNS is the "phonebook" of the internet, each device connected to the internet has its own IP address (IPv4 is 32 bit and IPv6 is 128 bit so we won't run out). So when you type in a domain, the first call goes to a DNS solver.
+[^2]: The format is "method path protocol", here method = GET, path = URL, protocol = HTTP/1.1
