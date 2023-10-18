@@ -42,7 +42,7 @@ A page with an image
 ```
 The first line is the status line containing one of the codes Kevin mentioned in his talk. Then there will be a block of HTTP headers followed by a blank line which is followed by the HTMl. 
 
-The "Content-Type" header field now allowed documents other than HTML to be transferred. Above in the HTML we can see an IMG tag, this would lead to another request and the following response:
+The "Content-Type" header field now allowed documents other than HTML to be transferred. Above in the HTML we can see an IMG tag, after the iniial request the browser parses the HTML file and makes additional requests. For the above we have the following request and response:
 ```
 GET /myimage.gif HTTP/1.0
 User-Agent: NCSA_Mosaic/2.0 (Windows 3.1)
@@ -53,6 +53,7 @@ Server: CERN/3.0 libwww/2.17
 Content-Type: text/gif
 (image content)
 ```
+
 Other features were added experimentally to gauge their popularity, there were no standards and this caused comtability issues. The solution would be to create a standard, and that is what HTTP/1.1 was.
 
 ## HTTP/1.1
@@ -65,3 +66,4 @@ HTTP/1.1 introduced new features yet again, including: support for multiple lang
 
 [^1]: Recall that DNS is the "phonebook" of the internet, each device connected to the internet has its own IP address (IPv4 is 32 bit and IPv6 is 128 bit so we won't run out). So when you type in a domain, the first call goes to a DNS solver.
 [^2]: The format is "method path protocol", here method = GET, path = URL, protocol = HTTP/1.1
+      The user is **always** responsible for creating a request to a server
