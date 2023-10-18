@@ -13,8 +13,9 @@ HTTP/1.0 improved on HTTP/0.9 by being more versatille. Browsers now had more to
 - **HTTP Headers** could be included in requests and responses, this included metadata
 
 ```
-def: grien(ed):
-  dfeirfkmer
+var add2 = function(number) {
+  return number + 2;
+}
 ```
 
 
