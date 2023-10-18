@@ -10,13 +10,14 @@ HTTP/0.9 was simple, having only one command, "GET", this would retrieve the HTM
 
 HTTP/1.0 improved on HTTP/0.9 by being more versatille. Browsers now had more to go off:
 - a status code was prepended to a response a browser received, so that it could act accordingly
-- **HTTP Headers** could be included in requests and responses, this included metadata
+- **HTTP Headers** could be included in requests and responses, this included metadata, see the example below
 
 ```
 var add2 = function(number) {
   return number + 2;
 }
 ```
+The "Content-Type" header field now allowed documents other than HTML to be transferred.
 
 
 
