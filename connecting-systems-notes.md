@@ -67,10 +67,12 @@ HTTP/1.1 introduced new features yet again, including: support for multiple lang
 
 Recall that TCP was reliable and UDP was fast, for this reason HTTP uses TCP. To initially establish a TCP connection several round trips are required, in HTTP/1.0 this was done for each request/response pair, in HTTP/1.1 pipelining, and persistant connections were added:
 - **Pipelining** - This is when multiple requests are sent over the same TCP connection without waiting for the responses in between, though only idempotent methods can be used.
-- **Persistent Connections** - TCP connections actually perform better after time, they become "warm connections" and so connections that remain open have speed advantages. HTTP/1.1 included a "Keep-alive" header to specify a minimum time a TCP connection should be open for, this overrides the default time for which an idle connection will be closed. 
+- **Persistent Connections** - TCP connections actually perform better after time, they become "warm connections" and so connections that remain open have speed advantages. HTTP/1.1 included a "Keep-alive" header to specify a minimum time a TCP connection should be open for, this overrides the default time for which an idle connection will be closed.
+**Note** - The default behaviour in HTTP/1.1 is a persistent connection, but it was still possible in HTTP/1.0 using the "Connection" header.
 
 
-HTTP/1.1 Issues
+## HTTP/1.1 Issues
+- Persistent connections consume server resources whilst idling
 
 
 
