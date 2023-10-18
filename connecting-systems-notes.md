@@ -57,7 +57,10 @@ Other features were added experimentally to gauge their popularity, there were n
 
 ## HTTP/1.1
 
-
+HTTP/1.1 introduced new features yet again, including: support for multiple languages, a "Host" header was added which allows the same IP address to hold multiple domains (collocation). These all lead to the following four major improvements:
+- **Efficient use of IP addresses**
+- **Faster responses** - Connections could be reused, i.e. a browser could send multiple requests over a persistent connection. Dynamically generated pages responded faster due to "chunked encoding" which allows a response to be sent before its length is known.
+- **Bandwidth saving** due to cache support, this is where a cache stores the response of a HTTP request and reuses it for subsequent requests, this will also lead to faster responses.
 
 
 [^1]: Recall that DNS is the "phonebook" of the internet, each device connected to the internet has its own IP address (IPv4 is 32 bit and IPv6 is 128 bit so we won't run out). So when you type in a domain, the first call goes to a DNS solver.
