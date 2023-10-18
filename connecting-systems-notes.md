@@ -54,7 +54,9 @@ Content-Type: text/gif
 (image content)
 ```
 
-Other features were added experimentally to gauge their popularity, there were no standards and this caused comtability issues. The solution would be to create a standard, and that is what HTTP/1.1 was.
+Other features were added experimentally to gauge their popularity (HTTP is extensible), for example creating your own header, as long as a server knew about this new header you could add new functionality. For example, the "Set-cookie" header overcomes the fact that HTTP is stateless (there is no link between requests), and so context can be added to a request - so shopping baskets can work!
+
+But there were no standards which caused comtability issues, the solution would be to create a standard, and that is what HTTP/1.1 was.
 
 ## HTTP/1.1
 
@@ -62,6 +64,9 @@ HTTP/1.1 introduced new features yet again, including: support for multiple lang
 - **Efficient use of IP addresses**
 - **Faster responses** - Connections could be reused, i.e. a browser could send multiple requests over a persistent connection. Dynamically generated pages responded faster due to "chunked encoding" which allows a response to be sent before its length is known.
 - **Bandwidth saving** due to cache support, this is where a cache stores the response of a HTTP request and reuses it for subsequent requests, this will also lead to faster responses.
+
+Recall that TCP was reliable and UDP was fast, for this reason HTTP uses TCP. To initially establish a TCP connection several round trips are required, in HTTP/1.0 this was done for each request/response pair, in HTTP/1.1 pipelining, and persistant connections were added:
+
 
 
 [^1]: Recall that DNS is the "phonebook" of the internet, each device connected to the internet has its own IP address (IPv4 is 32 bit and IPv6 is 128 bit so we won't run out). So when you type in a domain, the first call goes to a DNS solver.
