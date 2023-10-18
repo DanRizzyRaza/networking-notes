@@ -61,7 +61,7 @@ But there were no standards which caused comtability issues, the solution would 
 ## HTTP/1.1
 
 HTTP/1.1 introduced new features yet again, including: support for multiple languages, a "Host" header was added which allows the same IP address to hold multiple domains (collocation). These all lead to the following four major improvements:
-- **Efficient use of IP addresses**
+- **Efficient use of IP addresses** - collocation.
 - **Faster responses** - Connections could be reused, i.e. a browser could send multiple requests over a persistent connection. Dynamically generated pages responded faster due to "chunked encoding" which allows a response to be sent before its length is known, an obvious use case would be for video streaming.
 - **Bandwidth saving** due to cache support, this is where a cache stores the response of a HTTP request and reuses it for subsequent requests, this will also lead to faster responses.
 
