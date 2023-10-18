@@ -1,10 +1,18 @@
 # HTTP 1.1
 
+## Brief History
+
 Hypertext - text displayed on computer displays with hyperlinks to other texts.
 
 These hypertext documents are written in HTML and are exchanged using a certain protocol, HTTP.
 
-HTTP began as very simple, having only one command, "GET", this would retrieve the HTML of a page a user requests using its domain name/ip address[^1].
+HTTP/0.9 was simple, having only one command, "GET", this would retrieve the HTML of a page a user requests using its domain name/ip address[^1].
+
+HTTP/1.0 improved on HTTP/0.9 by being more versatille. Browsers now had more to go off:
+- a status code was prepended to a response a browser received, so that it could act accordingly
+- **HTTP Headers** could be included in requests and responses, this included metadata
+
+
 
 
 
