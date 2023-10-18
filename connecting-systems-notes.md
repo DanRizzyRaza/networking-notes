@@ -73,9 +73,11 @@ Recall that TCP was reliable and UDP was fast, for this reason HTTP uses TCP. To
 
 ## HTTP/1.1 Issues
 - Persistent connections consume server resources whilst idling
+- HTTP/1.1 is not superior in all cases: the protocol itself is more complicated and so requires approximately 3-5x as much code compared to 1.0, this comes from needing to deal with all the headers introduced.[^3]
 
 
 
 [^1]: Recall that DNS is the "phonebook" of the internet, each device connected to the internet has its own IP address (IPv4 is 32 bit and IPv6 is 128 bit so we won't run out). So when you type in a domain, the first call goes to a DNS solver.
 [^2]: The format is "method path protocol", here method = GET, path = URL, protocol = HTTP/1.1
       The user is **always** responsible for creating a request to a server
+[^3]: Supposedly, you could build a bare-bones HTTP/1.0 client in ~20 lines of code.
