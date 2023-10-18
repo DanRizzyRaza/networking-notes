@@ -12,10 +12,10 @@ HTTP/1.0 improved on HTTP/0.9 by being more versatille. Browsers now had more to
 - a status code was prepended to a response a browser received, so that it could act accordingly
 - **HTTP Headers** could be included in requests and responses, this included metadata
 
-'''
+```
 def: grien(ed):
   dfeirfkmer
-'''
+```
 
 
 
