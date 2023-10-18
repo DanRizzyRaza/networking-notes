@@ -4,7 +4,7 @@
 
 Hypertext - text displayed on computer displays with hyperlinks to other texts.
 
-These hypertext documents are written in HTML and are exchanged using a certain protocol, HTTP.
+These hypertext documents are written in HTML and are exchanged using a certain protocol, HTTP (Hypertext Transfer Protocol).
 
 HTTP/0.9 was simple, having only one command, "GET", this would retrieve the HTML of a page a user requests using its domain name/ip address[^1].
 
