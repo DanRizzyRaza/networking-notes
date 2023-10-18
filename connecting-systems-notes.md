@@ -33,16 +33,26 @@ Date: Sat, 28 Nov 2009 04:36:25 GMT
 Server: LiteSpeed
 Connection: close
 X-Powered-By: W3 Total Cache/0.8
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<!-- ... rest of the html ... -->
+Content-Type: text/html
+
+<HTML>
+A page with an image
+  <IMG SRC="/myimage.gif">
+</HTML>
 ```
 The first line is the status line containing one of the codes Kevin mentioned in his talk. Then there will be a block of HTTP headers followed by a blank line which is followed by the HTMl. 
 
+The "Content-Type" header field now allowed documents other than HTML to be transferred. Above in the HTML we can see an IMG tag, this would lead to another request and the following response:
+```
+GET /myimage.gif HTTP/1.0
+User-Agent: NCSA_Mosaic/2.0 (Windows 3.1)
 
-Remark: The "Content-Type" header field now allowed documents other than HTML to be transferred.
-
+200 OK
+Date: Tue, 15 Nov 1994 08:12:32 GMT
+Server: CERN/3.0 libwww/2.17
+Content-Type: text/gif
+(image content)
+```
 
 
 
