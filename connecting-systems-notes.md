@@ -1,4 +1,4 @@
-# HTTP 1.1
+# HTTP
 
 ## Brief History
 
@@ -53,6 +53,9 @@ Server: CERN/3.0 libwww/2.17
 Content-Type: text/gif
 (image content)
 ```
+Other features were added experimentally to gauge their popularity, there were no standards and this caused comtability issues. The solution would be to create a standard, and that is what HTTP/1.1 was.
+
+## HTTP/1.1
 
 
 
