@@ -8,7 +8,7 @@ These hypertext documents are written in HTML and are exchanged using a certain 
 
 HTTP/0.9 was simple, having only one command, "GET", this would retrieve the HTML of a page a user requests using its domain name/ip address[^1].
 
-HTTP/1.0 improved on HTTP/0.9 by being more versatille. Browsers now had more to go off:
+HTTP/1.0 improved on HTTP/0.9 by being more versatile. Browsers now had more to go off:
 - a status code was prepended to a response a browser received, so that it could act accordingly
 - **HTTP Headers** could be included in requests and responses, this included metadata, see the following example:
 
@@ -56,7 +56,7 @@ Content-Type: text/gif
 
 Other features were added experimentally to gauge their popularity (HTTP is extensible), for example creating your own header, as long as a server knew about this new header you could add new functionality. For example, the "Set-cookie" header overcomes the fact that HTTP is stateless (there is no link between requests), and so context can be added to a request - so shopping baskets can work!
 
-But there were no standards which caused comtability issues, the solution would be to create a standard, and that is what HTTP/1.1 was.
+But there were no standards which caused compatibility issues, the solution would be to create a standard, and that is what HTTP/1.1 was.
 
 ## HTTP/1.1
 
@@ -65,8 +65,8 @@ HTTP/1.1 introduced new features yet again, including: support for multiple lang
 - **Faster responses** - Connections could be reused, i.e. a browser could send multiple requests over a persistent connection. Dynamically generated pages responded faster due to "chunked encoding" which allows a response to be sent before its length is known, an obvious use case would be for video streaming.
 - **Bandwidth saving** due to cache support, this is where a cache stores the response of a HTTP request and reuses it for subsequent requests, this will also lead to faster responses.
 
-Recall that TCP was reliable and UDP was fast, for this reason HTTP uses TCP. To initially establish a TCP connection several round trips are required, in HTTP/1.0 this was done for each request/response pair, in HTTP/1.1 pipelining, and persistant connections were added:
-- **Pipelining** - This is when multiple requests are sent over the same TCP connection without waiting for the responses in between, though only idempotent methods can be used.
+Recall that TCP was reliable and UDP was fast, for this reason HTTP uses TCP. To initially establish a TCP connection several round trips are required, in HTTP/1.0 this was done for each request/response pair, in HTTP/1.1 pipe lining, and persistent connections were added:
+- **Pipe lining** - This is when multiple requests are sent over the same TCP connection without waiting for the responses in between, though only idempotent methods can be used.
 - **Persistent Connections** - TCP connections actually perform better after time, they become "warm connections" and so connections that remain open have speed advantages. HTTP/1.1 included a "Keep-alive" header to specify a minimum time a TCP connection should be open for, this overrides the default time for which an idle connection will be closed.
 **Note** - The default behaviour in HTTP/1.1 is a persistent connection, but it was still possible in HTTP/1.0 using the "Connection" header.
 
@@ -75,9 +75,17 @@ Recall that TCP was reliable and UDP was fast, for this reason HTTP uses TCP. To
 - Persistent connections consume server resources whilst idling
 - HTTP/1.1 is not superior in all cases: the protocol itself is more complicated and so requires approximately 3-5x as much code compared to 1.0, this comes from needing to deal with all the headers introduced.[^3]
 
+## References
+1. https://bunny.net/academy/http/what-is-chunked-encoding/
+2. https://stackoverflow.com/questions/246859/http-1-0-vs-1-1
+3. https://en.wikipedia.org/wiki/HTTP
+4. https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages
+5. https://developer.mozilla.org/en-US/docs/Web/HTTP/Connection_management_in_HTTP_1.x
+6. https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers)
+7. https://developer.mozilla.org/en-US/docs/Web/HTML
+8. https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Evolution_of_HTTP
 
-
-[^1]: Recall that DNS is the "phonebook" of the internet, each device connected to the internet has its own IP address (IPv4 is 32 bit and IPv6 is 128 bit so we won't run out). So when you type in a domain, the first call goes to a DNS solver.
+[^1]: Recall that DNS is the "phone book" of the internet, each device connected to the internet has its own IP address (IPv4 is 32 bit and IPv6 is 128 bit so we won't run out). So when you type in a domain, the first call goes to a DNS solver.
 [^2]: The format is "method path protocol", here method = GET, path = URL, protocol = HTTP/1.1
       The user is **always** responsible for creating a request to a server
 [^3]: Supposedly, you could build a bare-bones HTTP/1.0 client in ~20 lines of code.
