@@ -48,9 +48,7 @@ mTLS provides increased secutiy, but this is not always necessary, though some p
 
 ![image](https://github.com/DanRizzyRaza/networking-notes/assets/146075000/5b680e16-4695-4a4e-9ca9-f1896776e8b0)
 
-
-
-
+This diagram shows how arithmetic is done on an elliptic curve: the field here is the rational numbers, the actual fields used in cryptography are of prime order[^4], so the "curve" won't be continuous, but will instead be a colleciton of points. The point P is the generator, and the set of all it's multiples is the entire set of points that forms the elliptic curve. To add points we draw a line though the points, (for the same point we take the tangent at that point) and the reflection of the point at the 3rd intersection (can be the point at infinity, the identity) will be the sum of the two points. Given a point it is challenging to find the multiple of the generator point that gives this point.
 
 ### References
 
@@ -63,3 +61,4 @@ https://www.paloaltonetworks.co.uk/cyberpedia/what-is-a-zero-trust-architecture#
 [^1]: Hence why this is also called public-key cryptography
 [^2]: Can think of extra key length being used in maintaining the relationship between the public and private keys, what's left over is used in the encryption. E.g. a 2048-bit asym key is approx equal in security to a 112-bit symm key. 
 [^3]: And to prove that a website owns its public key, certificate are used.
+[^4]: Or a power of a prime number, there's an art to choosing the right field that prevents certain attacks.
