@@ -46,6 +46,11 @@ mTLS provides increased secutiy, but this is not always necessary, though some p
 
 # Diagram to show elliptic curve.
 
+![image](https://github.com/DanRizzyRaza/networking-notes/assets/146075000/5b680e16-4695-4a4e-9ca9-f1896776e8b0)
+
+
+
+
 
 ### References
 
