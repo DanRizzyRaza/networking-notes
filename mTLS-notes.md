@@ -36,11 +36,13 @@ These extra steps are:
 3. Server grants access
 
 This *"TLS certificate"* step sounds slightly different to what was described above though! That is because this certificate contains information used to verify the senders identity, such as the public key, who issues the certificate, when it expires, etc. This step and the one following encapsulates the whole process of proving you own a private key (there is more to it than just decrypting a signed message, but thats the essential part).
-  
 
-# Where is mTLS frequently used
+# Where is mTLS frequently used, and example
 
-# Example application that uses mTLS
+mTLS provides increased secutiy, but this is not always necessary, though some places do need this extra security, some examples include:
+- Sensors connected to the internet of things (e.g. remote traffic cameras)
+- e-commerce platforms that use a content delivery network (CDN), a user would connect to the CDN using plain TLS, but this CDN will connect to the main server using mTLS, this prevents many attacks (but for e-commerce especially, the emphasis would be on attacks that that allow an attacked to distribute content to customers)
+- Any use case that employs "Zero Trust", like the sensors above that connect to the IoT, routers, the cloud, etc will follow this paradigm.
 
 # Diagram to show the process
 
@@ -49,6 +51,8 @@ This *"TLS certificate"* step sounds slightly different to what was described ab
 
 https://www.internetsociety.org/deploy360/tls/basics/
 https://www.cloudflare.com/en-gb/learning/access-management/what-is-mutual-tls/
+https://corsha.com/blog/what-is-mtls-and-how-does-it-work
+https://www.paloaltonetworks.co.uk/cyberpedia/what-is-a-zero-trust-architecture#:~:text=A%20fundamental%20concept%20of%20Zero,with%20a%20Zero%20Trust%20approach.
 
 
 [^1]: Hence why this is also called public-key cryptography
