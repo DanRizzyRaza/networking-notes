@@ -11,6 +11,8 @@ And so even though the keys are related, given the public key it is (for no) unf
 
 This increased practicality does come at a cost: much larger keys are used, (it is unfeasible to calculate the private key from the public key) and so this method is thousands of times more computationally intensive, and therefore slow. [^2]
 
+To overcome this TLS uses asymmetric curve cryptography to share a **session key**, this will be used in future messages that are encrypted using symmetric cryptography.[^3]
+
   
 
 # Where is mTLS frequently used
@@ -27,3 +29,4 @@ https://www.internetsociety.org/deploy360/tls/basics/
 
 [^1]: Hence why this is also called public-key cryptography
 [^2]: Can think of extra key length being used in maintaining the relationship between the public and private keys, what's left over is used in the encryption. E.g. a 2048-bit asym key is approx equal in security to a 112-bit symm key. 
+[^3]: And to prove that a website owns its public key, certificate are used.
