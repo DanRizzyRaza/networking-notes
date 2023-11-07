@@ -6,7 +6,7 @@
 
 **Asymmetric cryptography** uses two keys, a public[^1], and a private key, these keys are related by a problem believe to be hard to reverse:
 - In RSA the hardness comes from the fact that it is hard to factor large numbers
-- Many modern crytography methods use arithmetic on elliptic curves points (Rc: ECDLP)
+- Many modern crytography methods use arithmetic on elliptic curves points (Rc: ECDLP, see diagram below)
 And so even though the keys are related, given the public key it is (for no) unfeasible to calculate the private key. This faciliates encryption using the public key that everyone has access to, but decryption using only the private key.
 
 This increased practicality does come at a cost: much larger keys are used, (it is unfeasible to calculate the private key from the public key) and so this method is thousands of times more computationally intensive, and therefore slow. [^2]
@@ -44,7 +44,7 @@ mTLS provides increased secutiy, but this is not always necessary, though some p
 - e-commerce platforms that use a content delivery network (CDN), a user would connect to the CDN using plain TLS, but this CDN will connect to the main server using mTLS, this prevents many attacks (but for e-commerce especially, the emphasis would be on attacks that that allow an attacked to distribute content to customers)
 - Any use case that employs "Zero Trust", like the sensors above that connect to the IoT, routers, the cloud, etc will follow this paradigm.
 
-# Diagram to show the process
+# Diagram to show elliptic curve.
 
 
 ### References
