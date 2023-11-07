@@ -19,7 +19,23 @@ As the name suggests, this method of security relies on mutual authentication - 
 
 The easiest way to prove that you have a private key is to decrypt a message encrypted with the corresponding public key.
 
+## The difference
 
+mTLS has additional steps when compared to TLS, see below:
+
+1. Client connects to server
+2. Server presents its TLS certificate
+3. Client verifies this certifcate
+4. **Extra Steps**
+5. Client and server exchange messaged over the encrypted connection
+
+These extra steps are:
+
+1. Client presents its TLS certificate
+2. Server verifies this certificate
+3. Server grants access
+
+This *"TLS certificate"* step sounds slightly different to what was described above though! That is because this certificate contains information used to verify the senders identity, such as the public key, who issues the certificate, when it expires, etc. This step and the one following encapsulates the whole process of proving you own a private key (there is more to it than just decrypting a signed message, but thats the essential part).
   
 
 # Where is mTLS frequently used
