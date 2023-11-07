@@ -13,6 +13,13 @@ This increased practicality does come at a cost: much larger keys are used, (it 
 
 To overcome this TLS uses asymmetric curve cryptography to share a **session key**, this will be used in future messages that are encrypted using symmetric cryptography.[^3]
 
+## mTLS - Mutal TLS
+
+As the name suggests, this method of security relies on mutual authentication - specifically, both parties need to prove they have the correct private key.
+
+The easiest way to prove that you have a private key is to decrypt a message encrypted with the corresponding public key.
+
+
   
 
 # Where is mTLS frequently used
@@ -25,6 +32,7 @@ To overcome this TLS uses asymmetric curve cryptography to share a **session key
 ### References
 
 https://www.internetsociety.org/deploy360/tls/basics/
+https://www.cloudflare.com/en-gb/learning/access-management/what-is-mutual-tls/
 
 
 [^1]: Hence why this is also called public-key cryptography
